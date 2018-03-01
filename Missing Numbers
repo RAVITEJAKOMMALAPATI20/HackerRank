@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int[] missingNumbers(int[] arr, int[] brr) {
+        int j =0;
+    	  int[] list =new int[101];
+        int min=Integer.MAX_VALUE;
+        TreeSet<Integer> a= new TreeSet<Integer>();
+        //finding minimum value in the array
+        for(int var:brr){
+            if(min>var)min=var;
+        }
+        //counting digits in the array
+        for(int var:arr){
+        	j=var-min;
+            list[j] =list[j]+1;
+        }
+        //removing the digits that are present in second arrray
+        for(int var:brr){
+        	  j=var-min;
+            list[j] =list[j]-1;
+            if(list[j]<0){
+            	a.add(j+min);
+            }
+        }     
+        int[] result =new int[a.size()];
+        j=0;
+        for(int var:a){
+            result[j]=var;
+            j++;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.nextInt();
+        }
+        int m = in.nextInt();
+        int[] brr = new int[m];
+        for(int brr_i = 0; brr_i < m; brr_i++){
+            brr[brr_i] = in.nextInt();
+        }
+        int[] result = missingNumbers(arr, brr);
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+        }
+        System.out.println("");
+
+
+        in.close();
+    }
+}
