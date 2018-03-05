@@ -1,0 +1,8 @@
+
+//Use following class and method for pattren matching
+class Regex_Test {
+    public boolean checker(String Regex_Pattern,String Test_String){
+        Pattern p = Pattern.compile(Regex_Pattern);
+        Matcher m = p.matcher(Test_String);
+        return m.find();
+    } 
