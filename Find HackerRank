@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;  
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int test = sc.nextInt();
+        sc.nextLine();
+        String s =null;
+        for(int i =0;i<test;i++){
+           s= sc.nextLine();
+            Regex_Test  r=new Regex_Test();
+            if(r.checker("^hackerrank$",s)){
+                System.out.println(0);
+                continue;
+            }
+            if(r.checker("^hackerrank",s)){
+                System.out.println(1);
+                continue;
+            }
+            if(r.checker("hackerrank$",s)){
+               System.out.println(2);
+                continue;
+            }
+            System.out.println(-1);
+        }
+    }
+}
+class Regex_Test {
+    public boolean checker(String Regex_Pattern,String Test_String){
+        Pattern p = Pattern.compile(Regex_Pattern);
+        Matcher m = p.matcher(Test_String);
+        return m.find();
+    }     
+}
