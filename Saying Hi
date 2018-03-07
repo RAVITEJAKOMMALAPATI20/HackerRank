@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+    Regex_Test rs =new Regex_Test();
+       Scanner  s = new Scanner(System.in);
+       int size = s.nextInt();
+       s.nextLine();
+       String pattren ="^[hH][iI][\\s][^dD]";
+       for(int i =0 ;i< size;i++){
+       String instring = s.nextLine();
+       if(rs.checker(pattren,instring))System.out.println(instring);
+       }
+    }
+}
+class Regex_Test {
+    public boolean checker(String Regex_Pattern,String Test_String){
+        Pattern p = Pattern.compile(Regex_Pattern);
+        Matcher m = p.matcher(Test_String);
+        return m.find();
+    } 
+    }
