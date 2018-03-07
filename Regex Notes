@@ -6,3 +6,38 @@ class Regex_Test {
         Matcher m = p.matcher(Test_String);
         return m.find();
     } 
+    }
+    
+    Regex Pattren----String
+   --> Matching Specific String 
+   "wikipedia"---"ffffwikipediaddff"
+   -->Matching Anything But a Newline
+   A.B--A+B
+   Digit Non Digit
+   \d for digit \D for non digit
+   White Space Non white space charecter
+   \s and \S
+   Word and nonword charecter
+   \w and \W
+   Matching start and end
+   ^ for start and $ for end
+   
+   Matching Specific Characters
+   [] --[abc] a or b or c
+   Excluding Specific Characters
+   [^]--[abc]--apart from a b and c
+   Matching charecter ranges
+   [a-z][A-Z][0-9][0-2][a-l]
+   Matching {x} Repetitions
+   {x}
+   Matching {x, y} Repetitions
+ w{3,5} : It will match the character w , 3,4 or 5 times. 
+[xyz]{5,} : It will match the character x, y or z  5or more times. 
+\d{1, 4} : It will match any digits 1,2 , 3 or 4 times.
+Matching Zero Or More Repetitions
+*
+Matching One Or More Repetitions
++
+()capturing groups
+
+    
